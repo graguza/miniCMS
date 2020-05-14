@@ -42,7 +42,7 @@ export class MongoDbSource implements DataSource {
     document: ds.AnyObject
   ) {
     const dbCollection = this.db.collection(collection);
-    this.db.mycollection.save(document, callback);
+    dbCollection.save(document, callback);
   }
 
   public find(
