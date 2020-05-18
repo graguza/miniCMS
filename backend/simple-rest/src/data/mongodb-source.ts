@@ -8,39 +8,29 @@ export class MongoDbSource implements DataSource {
     this.db = mongojs(connectionString);
   }
 
-  public single(
-    callback: ds.Callback<any>,
-    collection: string,
-    query?: ds.AnyObject & { _id?: any }
-  ) {
+  public exists(callback: ds.Callback<boolean>, collection: string, query?: ds.AnyObject) {
+    this.single((err, result) => callback(err, !!result), collection, query);
+  }
+
+  public single(callback: ds.Callback<ds.AnyObject>, collection: string, query?: ds.AnyObject & { _id?: any }) {
     const dbCollection = this.db.collection(collection);
     const q = this.getQuery(query);
-    dbCollection.findOne(q, callback);
+    dbCollection.findOne(q, (err, result) => callback(err, result));
   }
 
-  public delete(
-    callback: ds.Callback<any>,
-    collection: string,
-    query?: ds.AnyObject
-  ) {
+  public delete(callback: ds.Callback<ds.DeleteResponse>, collection: string, query?: ds.AnyObject) {
     const dbCollection = this.db.collection(collection);
-    throw new Error("Method not implemented.");
+    const q = this.getQuery(query);
+    dbCollection.remove(q, (err, result) => callback(err, result));
   }
 
-  public update(
-    callback: ds.Callback<any>,
-    collection: string,
-    query?: ds.AnyObject
-  ) {
+  public update(callback: ds.Callback<any>, collection: string, parameters: ds.UpdateOptions) {
     const dbCollection = this.db.collection(collection);
-    throw new Error("Method not implemented.");
+    parameters.query = this.getQuery(parameters.query);
+    dbCollection.findAndModify(parameters, (err, result) => callback(err, result));
   }
 
-  public insert(
-    callback: ds.Callback<any>,
-    collection: string,
-    document: ds.AnyObject
-  ) {
+  public insert(callback: ds.Callback<any>, collection: string, document: ds.AnyObject) {
     const dbCollection = this.db.collection(collection);
     dbCollection.save(document, callback);
   }

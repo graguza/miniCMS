@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app: minicms
+spec:
+  selector:
+    matchLabels:
+      app: minicms
+  template:
+    metadata:
+      labels:
+        app: minicms
+    spec:
+      containers:
+      - name: mongo
+        image: mongo
+      - name: simple-rest
+        image: simple-rest:1.0.0
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Never
