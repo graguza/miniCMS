@@ -16,8 +16,10 @@ spec:
       containers:
       - name: mongo
         image: mongo
+        ports:
+          - containerPort: 27017
       - name: simple-rest
         image: simple-rest:1.0.0
         ports:
-        - containerPort: 8080
+        - containerPort: 9090
         imagePullPolicy: Never

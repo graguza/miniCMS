@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  backend-service
+spec:
+  selector:
+    app:  minicms
+  type:  LoadBalancer
+  ports:
+  - port: 80
+    targetPort:  9090
