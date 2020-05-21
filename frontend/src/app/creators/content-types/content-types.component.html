@@ -1,0 +1,7 @@
+
+  <div *ngFor="let contentType of value; let i=index;" [ngStyle]="{'background-color':i%2 === 0 ? '' : 'lightgrey' }">
+    <app-input-content-type
+      [ngModel]="contentType"
+      (ngModelChange)="onChange($event, contentType)"
+    ></app-input-content-type>
+  </div>

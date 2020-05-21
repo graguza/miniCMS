@@ -1,0 +1,16 @@
+<div class="example-full-width" [formGroup]="inputContentTypeForm">
+  <mat-form-field class="example-full-width">
+    <mat-label>Title</mat-label>
+    <input matInput formControlName="title" placeholder="Title" />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Description</mat-label>
+    <textarea
+      matInput
+      formControlName="description"
+      placeholder="description"
+    ></textarea>
+  </mat-form-field>
+  <mat-slide-toggle formControlName="required">Required</mat-slide-toggle>
+</div>

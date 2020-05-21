@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   api: {
-    metadata: 'http://localhost:3500/',
+    main: 'http://dev01.kwadrat.local/api/{:collection}/{:id}',
   },
 };
 
