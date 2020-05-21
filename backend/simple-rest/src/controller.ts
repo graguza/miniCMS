@@ -57,7 +57,7 @@ export class Controller {
     const query = { _id: handler.params.id };
     this.source.exists(
       (err, result) =>
-        handler.handle(err, (req, resp) => resp.sendStatus(result ? HttpStatus.ok : HttpStatus.notFound)),
+        handler.handle(err, (req, resp) => resp.status(result ? HttpStatus.ok : HttpStatus.notFound).end()),
       collection,
       query
     );
@@ -73,7 +73,7 @@ export class Controller {
     const collection = handler.params.collection;
     const query = { _id: handler.params.id };
     this.source.delete(
-      (err, result) => handler.handle(err, (req, resp) => resp.sendStatus(HttpStatus.noContent)),
+      (err, result) => handler.handle(err, (req, resp) => resp.status(HttpStatus.noContent).end()),
       collection,
       query
     );
@@ -93,7 +93,7 @@ export class Controller {
       (err, result) => {
         const next = (req, resp) => {
           resp.append("Location", `${req.originalUrl}/${result._id}`);
-          resp.sendStatus(HttpStatus.created);
+          resp.status(HttpStatus.created).end();
         };
         handler.handle(err, next);
       },
@@ -120,7 +120,7 @@ export class Controller {
     };
 
     this.source.update(
-      (err, result) => handler.handle(err, (req, resp) => resp.sendStatus(HttpStatus.ok)),
+      (err, result) => handler.handle(err, (req, resp) => resp.status(HttpStatus.ok).end()),
       collection,
       parameters
     );

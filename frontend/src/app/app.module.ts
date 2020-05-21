@@ -20,6 +20,7 @@ import { MatGridListModule } from "@angular/material/grid-list";
 import { MatCardModule } from "@angular/material/card";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatInputModule } from "@angular/material/input";
+import { MatTableModule } from "@angular/material/table";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 import { EditorDesignerComponent } from "./creators/editor-designer/editor-designer.component";
@@ -28,6 +29,9 @@ import { NgxJsonViewerModule } from "ngx-json-viewer";
 import { InputContentTypeComponent } from "./creators/input-content-type/input-content-type.component";
 import { ContentTypesComponent } from "./creators/content-types/content-types.component";
 import { HttpClientModule } from "@angular/common/http";
+import { ListsNavigationComponent } from "./viewers/lists-navigation/lists-navigation.component";
+import { ListViewerComponent } from "./viewers/list-viewer/list-viewer.component";
+import { ListEditorComponent } from './viewers/list-editor/list-editor.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +43,9 @@ import { HttpClientModule } from "@angular/common/http";
     JsonViewerComponent,
     InputContentTypeComponent,
     ContentTypesComponent,
+    ListsNavigationComponent,
+    ListViewerComponent,
+    ListEditorComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +65,7 @@ import { HttpClientModule } from "@angular/common/http";
     MatMenuModule,
     MatInputModule,
     MatFormFieldModule,
+    MatTableModule,
     MatSlideToggleModule,
     NgxJsonViewerModule,
   ],

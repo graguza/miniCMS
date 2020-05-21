@@ -24,15 +24,16 @@ export class EditorDesignerComponent implements OnInit {
   }
 
   public onAddInput() {
-    const contentTypes = [...this.editorForm.value.contentTypes, { title: "", description: "", required: false }];
+    const contentTypes = [
+      ...this.editorForm.value.contentTypes,
+      { title: "", description: "", required: false, visible: true },
+    ];
     this.editorForm.get("contentTypes").setValue(contentTypes);
   }
 
   public onSave() {
-    console.log(environment.api.main);
-    console.log(this.editor);
     this.dataService
-      .save(environment.api.main, this.editor, { collection: "metadata" })
+      .post(environment.api.main, this.editor, { collection: "metadata" })
       .subscribe((r) => console.log("done"));
   }
 }

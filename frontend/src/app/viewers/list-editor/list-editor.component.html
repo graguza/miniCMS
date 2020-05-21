@@ -1,0 +1,8 @@
+<h1>Adding {{ (metadata$ | async)?.title }}</h1>
+<button mat-flat-button (click)="onSave()">Save</button>
+<div class="editor-form" [formGroup]="editorForm">
+  <mat-form-field class="editor-full-width" *ngFor="let control of (metadata$ | async)?.contentTypes">
+    <mat-label>{{control.title}}</mat-label>
+    <input matInput formControlName="{{control.title}}" placeholder="{{control.description}}" />
+  </mat-form-field>
+</div>

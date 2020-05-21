@@ -1,10 +1,9 @@
 <mat-grid-list cols="2" rowHeight="1:1">
   <mat-grid-tile>
-
     <div class="editor-designer-form" [formGroup]="editorForm">
-        <div>
-            <button mat-flat-button (click)="onSave()">Save</button>
-        </div>
+      <div>
+        <button mat-flat-button (click)="onSave()">Save</button>
+      </div>
       <div>
         <mat-form-field class="editor-designer-full-width">
           <mat-label>Title</mat-label>
@@ -31,15 +30,13 @@
       </div>
       <div>
         <button mat-flat-button (click)="onAddInput()">Add input</button>
-    </div>
+      </div>
       <div class="editor-designer-full-width">
         <app-content-types formControlName="contentTypes"></app-content-types>
       </div>
-
-
     </div>
   </mat-grid-tile>
-  <mat-grid-tile [style.background]="lightgreen">
+  <mat-grid-tile>
     <app-json-viewer [json]="editor"></app-json-viewer
   ></mat-grid-tile>
 </mat-grid-list>
