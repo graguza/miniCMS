@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   api: {
     main: 'http://dev01.kwadrat.local/api/{:collection}/{:id}',
+    // main: 'http://localhost:9090/{:collection}/{:id}',
   },
 };
 

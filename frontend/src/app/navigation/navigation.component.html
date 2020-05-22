@@ -9,12 +9,12 @@
   >
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/editor-designer">Editor designer</a>
+      <a mat-list-item routerLink="/editor-designer">Kreator list</a>
     </mat-nav-list>
     <app-lists-navigation></app-lists-navigation>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar >
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -24,9 +24,9 @@
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Administration</span>
+      <img src="/assets/logo-small.png" alt="Solw'IT logo">
     </mat-toolbar>
-    <div style="margin: 5px;">
+    <div class="app-logo" >
       <ng-content></ng-content>
     </div>
   </mat-sidenav-content>

@@ -1,8 +1,17 @@
-<h1>Adding {{ (metadata$ | async)?.title }}</h1>
-<button mat-flat-button (click)="onSave()">Save</button>
+<h1>Dodajesz do listy: {{ (metadata$ | async)?.title }}</h1>
 <div class="editor-form" [formGroup]="editorForm">
-  <mat-form-field class="editor-full-width" *ngFor="let control of (metadata$ | async)?.contentTypes">
-    <mat-label>{{control.title}}</mat-label>
-    <input matInput formControlName="{{control.title}}" placeholder="{{control.description}}" />
+  <div style="text-align: right;">
+    <button mat-flat-button color="primary" (click)="onSave()">Zapisz</button>
+  </div>
+  <mat-form-field
+    class="editor-full-width"
+    *ngFor="let control of (metadata$ | async)?.contentTypes"
+  >
+    <mat-label>{{ control.title }}</mat-label>
+    <input
+      matInput
+      formControlName="{{ control.title }}"
+      placeholder="{{ control.description }}"
+    />
   </mat-form-field>
 </div>

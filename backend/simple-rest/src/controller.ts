@@ -120,7 +120,7 @@ export class Controller {
     };
 
     this.source.update(
-      (err, result) => handler.handle(err, (req, resp) => resp.status(HttpStatus.ok).end()),
+      (err, result) => handler.handle(err, (req, resp) => resp.json(result)),
       collection,
       parameters
     );

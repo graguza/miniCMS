@@ -23,6 +23,7 @@ import { MatInputModule } from "@angular/material/input";
 import { MatTableModule } from "@angular/material/table";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
+import {ScrollingModule} from '@angular/cdk/scrolling';
 import { EditorDesignerComponent } from "./creators/editor-designer/editor-designer.component";
 import { JsonViewerComponent } from "./creators/json-viewer/json-viewer.component";
 import { NgxJsonViewerModule } from "ngx-json-viewer";
@@ -32,6 +33,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { ListsNavigationComponent } from "./viewers/lists-navigation/lists-navigation.component";
 import { ListViewerComponent } from "./viewers/list-viewer/list-viewer.component";
 import { ListEditorComponent } from './viewers/list-editor/list-editor.component';
+import { OptionsContentTypeComponent } from './creators/options-content-type/options-content-type.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +48,7 @@ import { ListEditorComponent } from './viewers/list-editor/list-editor.component
     ListsNavigationComponent,
     ListViewerComponent,
     ListEditorComponent,
+    OptionsContentTypeComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +70,7 @@ import { ListEditorComponent } from './viewers/list-editor/list-editor.component
     MatFormFieldModule,
     MatTableModule,
     MatSlideToggleModule,
+    ScrollingModule,
     NgxJsonViewerModule,
   ],
   providers: [UrlBuilderService, DataService],

@@ -15,3 +15,11 @@
   top: 0;
   z-index: 1;
 }
+
+.app-logo {
+  margin: 5px;
+  background-image: url("/assets/section-background.svg");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  height: 90%;
+}

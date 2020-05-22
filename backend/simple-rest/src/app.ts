@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 // Handle POST requests that come in formatted as JSON
 app.use(express.json());
 
-const source: DataSource = new MongoDbSource("mongodb://localhost/miniCMS");
+const source: DataSource = new MongoDbSource("mongodb://nas/miniCMS");
 const controller = new Controller(source);
 // collection - is a mongodb collection
 app.get("/:collection", (req, res) => controller.get(new HttpRequestHandler(req, res)));

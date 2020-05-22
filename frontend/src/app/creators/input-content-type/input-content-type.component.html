@@ -1,22 +1,22 @@
 <div class="example-full-width" [formGroup]="inputContentTypeForm">
   <mat-form-field class="example-full-width">
-    <mat-label>Title</mat-label>
-    <input matInput formControlName="title" placeholder="Title" />
+    <mat-label>Nazwa pola</mat-label>
+    <input matInput formControlName="title" placeholder="Wpisz nazwę pola" />
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
-    <mat-label>Description</mat-label>
+    <mat-label>Opis pola</mat-label>
     <textarea
       matInput
       formControlName="description"
-      placeholder="description"
+      placeholder="Wpisz opis pola"
     ></textarea>
   </mat-form-field>
 
   <div>
-    <mat-slide-toggle formControlName="required">Required</mat-slide-toggle>
+    <mat-slide-toggle formControlName="required">Wymagany</mat-slide-toggle>
   </div>
   <div>
-    <mat-slide-toggle formControlName="visible">Visible</mat-slide-toggle>
+    <mat-slide-toggle formControlName="visible">Widoczny na liście</mat-slide-toggle>
   </div>
 </div>

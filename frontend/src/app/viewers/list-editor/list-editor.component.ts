@@ -4,8 +4,6 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { switchMap } from "rxjs/operators";
 import { environment } from "src/environments/environment";
 import { FormBuilder } from "@angular/forms";
-import { Location } from "@angular/common";
-import { relative } from "path";
 
 @Component({
   selector: "app-list-editor",
@@ -53,7 +51,7 @@ export class ListEditorComponent implements OnInit {
       .post(environment.api.main, this.editorForm.value, { collection: this.metadata.collection })
       .subscribe(() => {
         console.log("done");
-        this.router.navigate(["/"], { relativeTo: this.route });
+        this.router.navigate(["/list/", this.id]);
       });
   }
 }
