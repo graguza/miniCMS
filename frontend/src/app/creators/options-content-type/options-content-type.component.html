@@ -1,9 +1,14 @@
-<div class="example-full-width" [formGroup]="inputContentTypeForm">
+<div class="example-full-width" [formGroup]="optionsContentTypeForm">
     <mat-form-field class="example-full-width">
       <mat-label>Nazwa pola</mat-label>
       <input matInput formControlName="title" placeholder="Wpisz nazwę pola" />
     </mat-form-field>
   
+    <mat-form-field class="example-full-width" style="display: none;">
+      <mat-label>Typ pola</mat-label>
+      <input matInput formControlName="type"  />
+    </mat-form-field>
+
     <mat-form-field class="example-full-width">
       <mat-label>Opis pola</mat-label>
       <textarea
@@ -13,16 +18,16 @@
       ></textarea>
     </mat-form-field>
   
-    <mat-radio-group aria-label="Zaznacz źródło danych">
+    <mat-radio-group aria-label="Zaznacz źródło danych" formControlName="dataSource">
         <mat-radio-button *ngFor="let source of dataSources" [value]="source">{{source}}</mat-radio-button>
       </mat-radio-group>
 
-    <mat-form-field class="example-full-width">
-      <mat-label>Źródło danych</mat-label>
+    <mat-form-field class="example-full-width" [ngStyle]="{'display':optionsContentTypeForm.value.dataSource==='list' ? '' : 'none' }">
+      <mat-label>Opcje</mat-label>
       <textarea
         matInput
-        formControlName="description"
-        placeholder="Wpisz opis pola"
+        formControlName="options"
+        placeholder="Wpisz wartości oddzielone przecinkami"
       ></textarea>
     </mat-form-field>
   

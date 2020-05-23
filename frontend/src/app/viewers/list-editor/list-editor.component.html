@@ -3,15 +3,20 @@
   <div style="text-align: right;">
     <button mat-flat-button color="primary" (click)="onSave()">Zapisz</button>
   </div>
-  <mat-form-field
+  <mat-form-field 
     class="editor-full-width"
     *ngFor="let control of (metadata$ | async)?.contentTypes"
   >
     <mat-label>{{ control.title }}</mat-label>
-    <input
+    <input *ngIf="control.type==='input'"
       matInput
       formControlName="{{ control.title }}"
       placeholder="{{ control.description }}"
     />
+    <mat-select *ngIf="control.type==='select'" formControlName="{{ control.title }}">
+      <mat-option *ngFor="let o of control.options" [value]="o">
+        {{o}}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
 </div>

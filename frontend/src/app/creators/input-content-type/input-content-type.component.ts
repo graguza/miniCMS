@@ -14,6 +14,7 @@ export class InputContentTypeComponent implements ControlValueAccessor, OnInit {
     description: ["", { updateOn: "blur" }],
     required: [false],
     visible: [true],
+    type: ["input"]
   });
 
   get value() {

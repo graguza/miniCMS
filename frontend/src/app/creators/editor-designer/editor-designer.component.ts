@@ -26,7 +26,15 @@ export class EditorDesignerComponent implements OnInit {
   public onAddInput() {
     const contentTypes = [
       ...this.editorForm.value.contentTypes,
-      { title: "", description: "", required: false, visible: true },
+      { title: "", description: "", required: false, visible: true, type: "input" },
+    ];
+    this.editorForm.get("contentTypes").setValue(contentTypes);
+  }
+
+  public onAddSelect() {
+    const contentTypes = [
+      ...this.editorForm.value.contentTypes,
+      { title: "", description: "", dataSource: "list", options: [], required: false, visible: true, type: "select" },
     ];
     this.editorForm.get("contentTypes").setValue(contentTypes);
   }
