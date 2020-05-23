@@ -1,15 +1,21 @@
 <mat-grid-list cols="2" rowHeight="1:1">
   <mat-grid-tile style="overflow-y: scroll;">
     <div class="editor-designer-form" [formGroup]="editorForm">
-      
+      <input formControlName="_id" hidden />
       <div class="right-align">
-        <button mat-flat-button (click)="onSave()" color="primary">Zapisz</button>
+        <button mat-flat-button (click)="onSave()" color="primary">
+          Zapisz
+        </button>
       </div>
       <h2>Ustawienia listy</h2>
       <div>
         <mat-form-field class="editor-designer-full-width">
           <mat-label>Nazwa</mat-label>
-          <input matInput formControlName="title" placeholder="Nazwa kolekcji" />
+          <input
+            matInput
+            formControlName="title"
+            placeholder="Nazwa kolekcji"
+          />
         </mat-form-field>
 
         <mat-form-field class="editor-designer-full-width">
@@ -34,8 +40,17 @@
       <h2>Pola</h2>
 
       <div class="right-align">
-        <button mat-flat-button color="primary" (click)="onAddInput()">Dodaj pole tekstowe</button>
-        <button mat-flat-button color="primary" (click)="onAddSelect()">Dodaj listę wyboru</button>
+        <button
+          mat-flat-button
+          color="primary"
+          (click)="onAddInput()"
+          style="margin-right: 5px;"
+        >
+          Dodaj pole tekstowe
+        </button>
+        <button mat-flat-button color="primary" (click)="onAddSelect()">
+          Dodaj listę wyboru
+        </button>
       </div>
       <div class="editor-designer-full-width">
         <app-content-types formControlName="contentTypes"></app-content-types>

@@ -36,6 +36,7 @@ import { ListsNavigationComponent } from "./viewers/lists-navigation/lists-navig
 import { ListViewerComponent } from "./viewers/list-viewer/list-viewer.component";
 import { ListEditorComponent } from "./viewers/list-editor/list-editor.component";
 import { OptionsContentTypeComponent } from "./creators/options-content-type/options-content-type.component";
+import { ListsComponent } from './creators/lists/lists.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +52,7 @@ import { OptionsContentTypeComponent } from "./creators/options-content-type/opt
     ListViewerComponent,
     ListEditorComponent,
     OptionsContentTypeComponent,
+    ListsComponent,
   ],
   imports: [
     BrowserModule,

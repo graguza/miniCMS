@@ -8,12 +8,29 @@ import { FormBuilder, ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/f
   providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => OptionsContentTypeComponent), multi: true }],
 })
 export class OptionsContentTypeComponent implements ControlValueAccessor, OnInit {
-  public dataSources = ["list", "collection"];
+  public dataSources = [
+    { name: "Lista", value: "list" },
+    { name: "Kolekcja", value: "collection" },
+  ];
+  private defaults = {
+    title: "",
+    description: "",
+    dataSource: "list",
+    collection: "",
+    field: "",
+    options: [],
+    required: false,
+    visible: true,
+    type: "select",
+  };
+
   private _value;
   public optionsContentTypeForm = this.fb.group({
     title: ["", { updateOn: "blur" }],
     description: ["", { updateOn: "blur" }],
     dataSource: ["list"],
+    collection: ["", { updateOn: "blur" }],
+    field: ["", { updateOn: "blur" }],
     options: ["", { updateOn: "blur" }],
     required: [false],
     visible: [true],

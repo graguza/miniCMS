@@ -1,7 +1,11 @@
 <div style="height: 100%;">
+  <mat-toolbar>
+    <span style="margin-right: 10px;">{{(metadata$|async)?.title}}</span><a mat-flat-button color="primary" [routerLink]="['list-editor']">Dodaj</a>
+  </mat-toolbar>
+<!-- 
   <div style="margin: 5px;">
-    <a mat-flat-button color="primary" [routerLink]="['list-editor']">Dodaj</a>
-  </div>
+    <span>{{(metadata$|async)?.title}}</span><a mat-flat-button color="primary" [routerLink]="['list-editor']">Dodaj</a>
+  </div> -->
   <table mat-table [dataSource]="data$ | async" class="mat-elevation-z8">
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
@@ -16,6 +20,6 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns" (click)="onClick(row)"></tr>
   </table>
 </div>

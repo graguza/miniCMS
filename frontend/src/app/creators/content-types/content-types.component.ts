@@ -23,8 +23,6 @@ export class ContentTypesComponent implements ControlValueAccessor, OnInit {
   public ngOnInit(): void {}
 
   public writeValue(obj: any) {
-    console.log("ContentTypesComponent", obj);
- 
     if (obj !== this.value) {
       this._value = obj;
     }
@@ -45,8 +43,6 @@ export class ContentTypesComponent implements ControlValueAccessor, OnInit {
   }
 
   public onChange(next, previous) {
-    console.log(next);
-
     const index = this.value.indexOf(previous);
     if (index < 0) {
       this._value.push(next);

@@ -50,4 +50,18 @@ export class DataService {
 
     return this.http.post(url, params, httpOptions as any);
   }
+
+  public put(urlTemplate: string, params?: any, urlParams?: any){
+    const urlParameters = urlParams || {};
+    const url = this.urlBuilder.format(urlTemplate, urlParameters);
+
+    const httpOptions = {
+      observe:"response",
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+      }),
+    };
+
+    return this.http.put(url, params, httpOptions as any);
+  }
 }

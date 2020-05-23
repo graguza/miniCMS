@@ -35,7 +35,6 @@ export class InputContentTypeComponent implements ControlValueAccessor, OnInit {
   }
 
   public writeValue(obj: any) {
-    console.log("InputContentTypeComponent", obj);
     if (obj !== this.value) {
       this._value = obj;
     }

@@ -1,40 +1,70 @@
 <div class="example-full-width" [formGroup]="optionsContentTypeForm">
-    <mat-form-field class="example-full-width">
-      <mat-label>Nazwa pola</mat-label>
-      <input matInput formControlName="title" placeholder="Wpisz nazwę pola" />
-    </mat-form-field>
-  
-    <mat-form-field class="example-full-width" style="display: none;">
-      <mat-label>Typ pola</mat-label>
-      <input matInput formControlName="type"  />
-    </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Nazwa pola</mat-label>
+    <input matInput formControlName="title" placeholder="Wpisz nazwę pola" />
+  </mat-form-field>
 
-    <mat-form-field class="example-full-width">
-      <mat-label>Opis pola</mat-label>
-      <textarea
-        matInput
-        formControlName="description"
-        placeholder="Wpisz opis pola"
-      ></textarea>
-    </mat-form-field>
-  
-    <mat-radio-group aria-label="Zaznacz źródło danych" formControlName="dataSource">
-        <mat-radio-button *ngFor="let source of dataSources" [value]="source">{{source}}</mat-radio-button>
-      </mat-radio-group>
+  <mat-form-field class="example-full-width" style="display: none;">
+    <mat-label>Typ pola</mat-label>
+    <input matInput formControlName="type" />
+  </mat-form-field>
 
-    <mat-form-field class="example-full-width" [ngStyle]="{'display':optionsContentTypeForm.value.dataSource==='list' ? '' : 'none' }">
-      <mat-label>Opcje</mat-label>
-      <textarea
+  <mat-form-field class="example-full-width">
+    <mat-label>Opis pola</mat-label>
+    <textarea
+      matInput
+      formControlName="description"
+      placeholder="Wpisz opis pola"
+    ></textarea>
+  </mat-form-field>
+
+  <mat-radio-group
+    aria-label="Zaznacz źródło danych"
+    formControlName="dataSource"
+  >
+    <mat-radio-button style="margin-right: 10px;" *ngFor="let source of dataSources" [value]="source.value">{{
+      source.name
+    }}</mat-radio-button>
+  </mat-radio-group>
+
+  <mat-form-field
+    class="example-full-width"
+    [ngStyle]="{
+      display: optionsContentTypeForm.value.dataSource === 'list' ? '' : 'none'
+    }"
+  >
+    <mat-label>Opcje</mat-label>
+    <textarea
+      matInput
+      formControlName="options"
+      placeholder="Wpisz wartości oddzielone przecinkami"
+    ></textarea>
+  </mat-form-field>
+  <div
+    [ngStyle]="{
+      display:
+        optionsContentTypeForm.value.dataSource === 'collection' ? '' : 'none'
+    }"
+  >
+    <mat-form-field class="example-full-width">
+      <mat-label>Kolekcja</mat-label>
+      <input
         matInput
-        formControlName="options"
-        placeholder="Wpisz wartości oddzielone przecinkami"
-      ></textarea>
+        formControlName="collection"
+        placeholder="Wpisz nazwę kolekcji, która będzie źródłem wartości"
+      />
     </mat-form-field>
-  
-    <div>
-      <mat-slide-toggle formControlName="required">Wymagany</mat-slide-toggle>
-    </div>
-    <div>
-      <mat-slide-toggle formControlName="visible">Widoczny na liście</mat-slide-toggle>
-    </div>
+    <mat-form-field class="example-full-width">
+      <mat-label>Pole</mat-label>
+      <input matInput formControlName="field" placeholder="Wpisz nazwę pola" />
+    </mat-form-field>
   </div>
+  <div>
+    <mat-slide-toggle formControlName="required">Wymagany</mat-slide-toggle>
+  </div>
+  <div>
+    <mat-slide-toggle formControlName="visible"
+      >Widoczny na liście</mat-slide-toggle
+    >
+  </div>
+</div>

@@ -11,7 +11,6 @@ export class PageComponent implements OnInit, AfterViewInit {
 
   constructor() {}
   ngAfterViewInit(): void {
-    console.log(this.helloTemplate);
     this.helloTemplate
   }
 
