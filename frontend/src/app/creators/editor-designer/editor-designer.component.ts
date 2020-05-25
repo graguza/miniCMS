@@ -13,6 +13,10 @@ import { switchMap, tap, filter } from "rxjs/operators";
 })
 export class EditorDesignerComponent implements OnInit {
   public editor: any = {};
+  public listTypes = [
+    { name: "Tabela", value: "table" },
+    { name: "Karty", value: "cards" },
+  ];
   private id;
   lightgreen = "lightgreen";
   public editorForm = this.fb.group({
@@ -20,6 +24,7 @@ export class EditorDesignerComponent implements OnInit {
     title: [],
     description: [],
     collection: [],
+    type: ["table"],
     contentTypes: [[]],
   });
   constructor(
@@ -53,6 +58,14 @@ export class EditorDesignerComponent implements OnInit {
     const contentTypes = [
       ...this.editorForm.value.contentTypes,
       { title: "", description: "", required: false, visible: true, type: "input" },
+    ];
+    this.editorForm.get("contentTypes").setValue(contentTypes);
+  }
+
+  public onAddPicture() {
+    const contentTypes = [
+      ...this.editorForm.value.contentTypes,
+      { title: "", description: "", required: false, visible: true, type: "picture" },
     ];
     this.editorForm.get("contentTypes").setValue(contentTypes);
   }

@@ -1,4 +1,5 @@
 <div class="example-full-width" [formGroup]="optionsContentTypeForm">
+  <span>Typ pola: {{optionsContentTypeForm.value.type}}</span>
   <mat-form-field class="example-full-width">
     <mat-label>Nazwa pola</mat-label>
     <input matInput formControlName="title" placeholder="Wpisz nazwę pola" />

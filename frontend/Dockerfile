@@ -1,9 +1,10 @@
 FROM johnpapa/angular-cli as build-env
 WORKDIR /app
-
+RUN ls 
 ARG env=stage
 ARG ver=master
 COPY . .
+RUN ls
 RUN npm install
 RUN ng build 
 

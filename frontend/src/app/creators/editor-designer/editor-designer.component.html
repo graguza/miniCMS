@@ -35,6 +35,14 @@
             placeholder="Nazwa kolekcji w bazie danych"
           />
         </mat-form-field>
+        <mat-radio-group aria-label="Zaznacz typ lity" formControlName="type">
+          <mat-radio-button
+            style="margin-right: 10px;"
+            *ngFor="let listType of listTypes"
+            [value]="listType.value"
+            >{{ listType.name }}</mat-radio-button
+          >
+        </mat-radio-group>
       </div>
       <mat-divider style="margin-top: 10px;"></mat-divider>
       <h2>Pola</h2>
@@ -48,6 +56,15 @@
         >
           Dodaj pole tekstowe
         </button>
+        <button
+          mat-flat-button
+          color="primary"
+          (click)="onAddPicture()"
+          style="margin-right: 5px;"
+        >
+          Dodaj pole obrazu
+        </button>
+
         <button mat-flat-button color="primary" (click)="onAddSelect()">
           Dodaj listę wyboru
         </button>

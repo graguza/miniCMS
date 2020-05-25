@@ -24,7 +24,10 @@ export class ListViewerComponent implements OnInit {
         this.id = params.get("id");
         return this.dataService.get(environment.api.main, { collection: "metadata", id: this.id });
       }),
-      tap((x: any) => (this.displayedColumns = x.contentTypes.map((c) => c.title))),
+      tap((x: any) => {
+        this.displayedColumns = x.contentTypes.map((c) => c.title);
+        this.metadata=x;
+      }),
       tap((x) => (this.data$ = this.dataService.get(environment.api.main, { collection: x.collection })))
     );
   }

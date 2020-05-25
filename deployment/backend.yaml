@@ -18,10 +18,6 @@ spec:
         image: mongo
         ports:
           - containerPort: 27017
-        volumeMounts:
-          - mountPath: "/data/mongo"
-            subPath: "minicms-mongo"
-            name: minicms-mongo-store
       - name: simple-rest
         image: simple-rest:1.0.0
         ports:

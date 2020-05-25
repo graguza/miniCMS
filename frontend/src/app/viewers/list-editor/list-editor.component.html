@@ -18,6 +18,12 @@
       formControlName="{{ control.title }}"
       placeholder="{{ control.description }}"
     />
+    <input
+      *ngIf="control.type === 'picture'"
+      matInput
+      formControlName="{{ control.title }}"
+      placeholder="{{ control.description }}"
+    />
     <mat-select
       *ngIf="control.type === 'select' && control.dataSource === 'list'"
       formControlName="{{ control.title }}"

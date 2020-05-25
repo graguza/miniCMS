@@ -8,4 +8,8 @@
       [ngModel]="contentType"
       (ngModelChange)="onChange($event, contentType)"
     ></app-options-content-type>
+    <app-picture-content-type *ngIf="contentType.type==='picture'"
+      [ngModel]="contentType"
+      (ngModelChange)="onChange($event, contentType)"
+    ></app-picture-content-type>
   </div>

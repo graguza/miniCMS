@@ -37,6 +37,9 @@ import { ListViewerComponent } from "./viewers/list-viewer/list-viewer.component
 import { ListEditorComponent } from "./viewers/list-editor/list-editor.component";
 import { OptionsContentTypeComponent } from "./creators/options-content-type/options-content-type.component";
 import { ListsComponent } from './creators/lists/lists.component';
+import { PictureContentTypeComponent } from './creators/picture-content-type/picture-content-type.component';
+import { PictureContentTypeViewerComponent } from './viewers/picture-content-type-viewer/picture-content-type-viewer.component';
+import { ContentTypesBodyComponent } from './viewers/content-types-body/content-types-body.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +56,9 @@ import { ListsComponent } from './creators/lists/lists.component';
     ListEditorComponent,
     OptionsContentTypeComponent,
     ListsComponent,
+    PictureContentTypeComponent,
+    PictureContentTypeViewerComponent,
+    ContentTypesBodyComponent,
   ],
   imports: [
     BrowserModule,

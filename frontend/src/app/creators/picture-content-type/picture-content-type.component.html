@@ -1,16 +1,15 @@
-<div class="example-full-width" [formGroup]="inputContentTypeForm">
-  <span>Typ pola: {{inputContentTypeForm.value.type}}</span>
+<div class="example-full-width" [formGroup]="pictureContentTypeForm">
+  <span>Typ pola: {{ pictureContentTypeForm.value.type }}</span>
   <mat-form-field class="example-full-width">
     <mat-label>Nazwa pola</mat-label>
     <input matInput formControlName="title" placeholder="Wpisz nazwę pola" />
   </mat-form-field>
-<div hidden>
-  <mat-form-field class="example-full-width" >
-    <mat-label>Typ pola</mat-label>
-    <input matInput formControlName="type"  />
-  </mat-form-field>
-</div>
-
+  <div hidden>
+    <mat-form-field class="example-full-width">
+      <mat-label>Typ pola</mat-label>
+      <input matInput formControlName="type" />
+    </mat-form-field>
+  </div>
   <mat-form-field class="example-full-width">
     <mat-label>Opis pola</mat-label>
     <textarea
@@ -24,6 +23,8 @@
     <mat-slide-toggle formControlName="required">Wymagany</mat-slide-toggle>
   </div>
   <div>
-    <mat-slide-toggle formControlName="visible">Widoczny na liście</mat-slide-toggle>
+    <mat-slide-toggle formControlName="visible"
+      >Widoczny na liście</mat-slide-toggle
+    >
   </div>
 </div>
