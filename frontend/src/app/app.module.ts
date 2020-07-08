@@ -21,6 +21,7 @@ import { MatCardModule } from "@angular/material/card";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatInputModule } from "@angular/material/input";
 import { MatTableModule } from "@angular/material/table";
+import { DragDropModule } from "@angular/cdk/drag-drop";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 import { MatSelectModule } from "@angular/material/select";
@@ -36,10 +37,11 @@ import { ListsNavigationComponent } from "./viewers/lists-navigation/lists-navig
 import { ListViewerComponent } from "./viewers/list-viewer/list-viewer.component";
 import { ListEditorComponent } from "./viewers/list-editor/list-editor.component";
 import { OptionsContentTypeComponent } from "./creators/options-content-type/options-content-type.component";
-import { ListsComponent } from './creators/lists/lists.component';
-import { PictureContentTypeComponent } from './creators/picture-content-type/picture-content-type.component';
-import { PictureContentTypeViewerComponent } from './viewers/picture-content-type-viewer/picture-content-type-viewer.component';
-import { ContentTypesBodyComponent } from './viewers/content-types-body/content-types-body.component';
+import { ListsComponent } from "./creators/lists/lists.component";
+import { PictureContentTypeComponent } from "./creators/picture-content-type/picture-content-type.component";
+import { PictureContentTypeViewerComponent } from "./viewers/picture-content-type-viewer/picture-content-type-viewer.component";
+import { ContentTypesBodyComponent } from "./viewers/content-types-body/content-types-body.component";
+import { BlindCvComponent } from "./viewers/blind-cv/blind-cv.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +61,7 @@ import { ContentTypesBodyComponent } from './viewers/content-types-body/content-
     PictureContentTypeComponent,
     PictureContentTypeViewerComponent,
     ContentTypesBodyComponent,
+    BlindCvComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,6 +82,7 @@ import { ContentTypesBodyComponent } from './viewers/content-types-body/content-
     MatRadioModule,
     MatInputModule,
     MatSelectModule,
+    DragDropModule,
     MatFormFieldModule,
     MatTableModule,
     MatSlideToggleModule,

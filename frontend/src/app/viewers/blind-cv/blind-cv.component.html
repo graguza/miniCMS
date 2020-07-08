@@ -1,0 +1,82 @@
+<div class="example-container">
+  <h2>Pracownik</h2>
+
+  <div
+    cdkDropList
+    #dataList="cdkDropList"
+    [cdkDropListData]="data"
+    [cdkDropListConnectedTo]="[titleList, subtitleList, sectionsList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="example-box" *ngFor="let item of data" cdkDrag>{{ item }}</div>
+  </div>
+</div>
+
+<div class="example-container">
+  <h2>Wybrane dane</h2>
+  <div>
+    <h3>Tytuł</h3>
+    <div
+      cdkDropList
+      #titleList="cdkDropList"
+      [cdkDropListData]="title"
+      [cdkDropListConnectedTo]="[dataList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="example-box" *ngFor="let item of title" cdkDrag>
+        {{ item }}
+      </div>
+    </div>
+  </div>
+  <div>
+    <h3>Podtytuł</h3>
+    <div
+      cdkDropList
+      #subtitleList="cdkDropList"
+      [cdkDropListData]="subtitle"
+      [cdkDropListConnectedTo]="[dataList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="example-box" *ngFor="let item of subtitle" cdkDrag>
+        {{ item }}
+      </div>
+    </div>
+  </div>
+  <div>
+    <h3>Sekcje</h3>
+    <div
+      cdkDropList
+      #sectionsList="cdkDropList"
+      [cdkDropListData]="sections"
+      [cdkDropListConnectedTo]="[dataList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="example-box" *ngFor="let item of sections" cdkDrag>
+        {{ item }}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="example-container">
+  <h2>Blind CV</h2>
+  <mat-form-field class="editor-full-width" >
+    <mat-label>Tytuł</mat-label>
+    <input matInput [(ngModel)]="blind.title" />
+  </mat-form-field>
+  <mat-form-field class="editor-full-width" *ngFor="let control of subtitle">
+    <mat-label>Podtytuł</mat-label>
+    <input matInput [(ngModel)]="blind.subtitle" />
+  </mat-form-field>
+  <h3>Sekcje</h3>
+  <mat-form-field class="editor-full-width" *ngFor="let control of blind.sections; let i = index;">
+    <mat-label>{{ control.key }}</mat-label>
+    <input matInput [(ngModel)]="blind.sections[i].value" />
+  </mat-form-field>
+  <div style="text-align: right;">
+    <button mat-flat-button color="primary" (click)="getPdf()">Pobierz PDF</button>
+  </div>
+</div>

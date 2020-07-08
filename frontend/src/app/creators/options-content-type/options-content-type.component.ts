@@ -34,6 +34,7 @@ export class OptionsContentTypeComponent implements ControlValueAccessor, OnInit
     options: ["", { updateOn: "blur" }],
     required: [false],
     visible: [true],
+    isMultiple: [false],
     type: ["select"],
   });
 

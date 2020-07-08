@@ -37,12 +37,12 @@ export class DataService {
     return this.http.post<T>(url, params, httpOptions);
   }
 
-  public post(urlTemplate: string, params?: any, urlParams?: any){
+  public post(urlTemplate: string, params?: any, urlParams?: any) {
     const urlParameters = urlParams || {};
     const url = this.urlBuilder.format(urlTemplate, urlParameters);
 
     const httpOptions = {
-      observe:"response",
+      observe: "response",
       headers: new HttpHeaders({
         "Content-Type": "application/json",
       }),
@@ -51,15 +51,17 @@ export class DataService {
     return this.http.post(url, params, httpOptions as any);
   }
 
-  public put(urlTemplate: string, params?: any, urlParams?: any){
+  public put(urlTemplate: string, params?: any, urlParams?: any) {
     const urlParameters = urlParams || {};
     const url = this.urlBuilder.format(urlTemplate, urlParameters);
 
     const httpOptions = {
-      observe:"response",
+      observe: "response",
       headers: new HttpHeaders({
         "Content-Type": "application/json",
+        "Accept": "application/pdf",
       }),
+      responseType: "Blob",
     };
 
     return this.http.put(url, params, httpOptions as any);

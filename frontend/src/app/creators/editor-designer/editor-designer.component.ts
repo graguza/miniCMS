@@ -83,6 +83,7 @@ export class EditorDesignerComponent implements OnInit {
         type: "select",
         collection: "",
         field: "",
+        isMultiple: false,
       },
     ];
     this.editorForm.get("contentTypes").setValue(contentTypes);

@@ -4,6 +4,7 @@
 
 <div class="editor-form" [formGroup]="editorForm">
   <div style="text-align: right;">
+    <a mat-flat-button color="primary" [routerLink]="['/list', id, 'blind-cv', itemId]">Blind CV</a>
     <button mat-flat-button color="primary" (click)="onSave()">Zapisz</button>
   </div>
   <input formControlName="_id" hidden />
@@ -27,6 +28,7 @@
     <mat-select
       *ngIf="control.type === 'select' && control.dataSource === 'list'"
       formControlName="{{ control.title }}"
+      [multiple]="control.isMultiple"
     >
       <mat-option *ngFor="let o of control.options" [value]="o">
         {{ o }}
@@ -35,6 +37,7 @@
     <mat-select
       *ngIf="control.type === 'select' && control.dataSource === 'collection'"
       formControlName="{{ control.title }}"
+      [multiple]="control.isMultiple"
     >
       <mat-option *ngFor="let o of control.options | async" [value]="o">
         {{ o }}

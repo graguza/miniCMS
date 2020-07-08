@@ -6,6 +6,7 @@ import { EditorDesignerComponent } from "./creators/editor-designer/editor-desig
 import { ListViewerComponent } from "./viewers/list-viewer/list-viewer.component";
 import { ListEditorComponent } from "./viewers/list-editor/list-editor.component";
 import { ListsComponent } from './creators/lists/lists.component';
+import { BlindCvComponent } from './viewers/blind-cv/blind-cv.component';
 
 const routes: Routes = [
   { path: "editor-designer", component: EditorDesignerComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: "list/:id", component: ListViewerComponent },
   { path: "list/:id/list-editor", component: ListEditorComponent },
   { path: "list/:id/list-editor/:itemId", component: ListEditorComponent },
+  { path: "list/:id/blind-cv/:itemId", component: BlindCvComponent },
   { path: "list/:id/editor-designer", component: EditorDesignerComponent },
   { path: "**", component: DashboardComponent },
 ];
